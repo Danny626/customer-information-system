@@ -1,0 +1,86 @@
+<form [formGroup]="form">
+  <p>Use el formulario de búsqueda para el cálculo de su factura.</p>
+
+  <div
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign="space-between center"
+  >
+    <mat-form-field appearance="fill" fxFlex="13">
+      <mat-label>Gestión</mat-label>
+      <mat-select formControlName="gestion" name="gestion">
+        <mat-option *ngFor="let gestion of gestiones" [value]="gestion.valor">
+          {{ gestion.valor }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.controls['gestion'].hasError('required')">
+        Por favor seleccione una Gestión
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" fxFlex="26">
+      <mat-label>Recinto</mat-label>
+      <mat-select formControlName="recinto" name="recinto">
+        <mat-option *ngFor="let recinto of recintos" [value]="recinto.recCod">
+          {{ recinto.nombre }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.controls['recinto'].hasError('required')">
+        Por favor seleccione un Recinto
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" fxFlex="26">
+      <mat-label>Nro. Registro</mat-label>
+      <input matInput formControlName="nroRegistro" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" fxFlex="26">
+      <mat-label>Doc. Embarque</mat-label>
+      <input matInput formControlName="docEmbarque" />
+    </mat-form-field>
+  </div>
+
+  <a mat-button (click)="limpiarPreFactura()"
+    style="float: right; margin-left: 10px;">Limpiar</a>
+  <!-- <button
+    mat-stroked-button
+    (click)="limpiarPreFactura()"
+    style="float: right; margin-left: 10px;"
+  >
+    Limpiar
+  </button> -->
+
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="!isValidForm()"
+    (click)="cargarPreFactura()"
+    style="float: right;"
+  >
+    Calcular
+  </button>
+
+</form>
+
+<!-- <div class="password-rules" fxFlex="65%" fxFlex.sm="90%" fxFlex.xs="95%">
+      Password rules:
+      <mat-list>
+        <mat-list-item>
+          Must be at least 6 characters
+        </mat-list-item>
+  
+        <mat-list-item>
+          Must contain at least one non alphanumeric character
+        </mat-list-item>
+  
+        <mat-list-item>
+          Must contain at least one lowercase ('a'-'z')
+        </mat-list-item>
+  
+        <mat-list-item>
+          Must contain at least one uppercase ('A'-'Z')
+        </mat-list-item>
+      </mat-list>
+    </div> -->

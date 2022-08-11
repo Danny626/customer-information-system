@@ -1,0 +1,65 @@
+<div
+  class="container"
+  fxFlex="100%"
+  fxLayout="column"
+  fxLayoutAlign="center none"
+>
+  <!-- Cabecera  -->
+  <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+    <div fxLayout="row">
+      <!-- logo -->
+      <img
+        width="90"
+        height="auto"
+        src="assets/images/a.png"
+        alt="Albo S.A."
+        style="margin-right: 20px"
+      />
+
+      <mat-divider [vertical]="true"></mat-divider>
+
+      <!-- Info. empresa -->
+      <ul style="list-style-type: none; width: 170px; padding-left: 20px">
+        <li><b>Almacenera Boliviana S.A.</b></li>
+        <li>info@albo.com.bo</li>
+        <li>www.albo.com.bo</li>
+      </ul>
+    </div>
+
+    <div fxLayoutAlign="end start" style="width: 100%">
+      <h1>PRE FACTURA</h1>
+    </div>
+  </div>
+
+  <!-- Total -->
+  <div fxLayout="row" fxLayoutAlign="end center" style="margin-bottom: 30px">
+    <div fxLayout="column" fxLayoutAlign="center end">
+      <label>Saldo a Pagar</label>
+      <label style="font-weight: bold">
+        <b>Bs.{{ total }}</b>
+      </label>
+    </div>
+  </div>
+
+  <!-- nombre cliente -->
+  <!-- <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"> -->
+  <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+    <div fxLayout="row" fxFlex="50">
+      <div style="margin-right: 10px; width: 50px">Cliente</div>
+      <div style="font-weight: bold">Juan Valdez</div>
+    </div>
+    <div fxLayout="row" fxFlex="100">
+      <div fxLayout="row" fxFlex="50">
+        <div style="margin-right: 10px; width: 50px">Nit/CI</div>
+        <div style="font-weight: bold">12345678</div>
+      </div>
+      <div fxLayout="row" fxFlex="50" fxLayoutAlign="end center">
+        <div style="margin-right: 10px; width: 50px">Fecha</div>
+        <div style="font-weight: bold">02/08/2022</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- nit cliente -->
+  <!-- </div> -->
+</div>

@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+}
+
+.center {
+    text-align: center;
+    justify-content: center;
+}
+
+.right {
+    text-align: right;
+    justify-content: right;
+}
+
+.example-container {
+    overflow: auto;
+}
